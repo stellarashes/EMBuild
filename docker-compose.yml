@@ -1,0 +1,11 @@
+services:
+  embuild:
+    build: .
+    volumes:
+      - ./data:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
